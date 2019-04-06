@@ -1,0 +1,112 @@
+.card {
+    position: relative;
+    padding: 2px;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.2;
+    background: $brand-white;
+    box-shadow: 0 0 2px 1px rgba(#000, 0.25);
+
+    &[data-active-notification] {
+
+        &::before {
+            content: attr(data-active-notification);
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 2px 6px;
+            z-index: 2;
+            border: 1px solid $brand-white;
+            border-radius: 4px;
+            color: $brand-white;
+            @include linearGradient(#9fef87, #1f871a);
+            box-shadow: 0 1px 1px 0 rgba(#000, 0.25);
+        }
+    }
+
+    &-holder {
+
+        &_border {
+            position: relative;
+            padding: 5px;
+            padding-bottom: 12px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 29px solid transparent;
+                -moz-border-image: url(../images/border-image.png) 30 round round;
+                -webkit-border-image: url(../images/border-image.png) 30 round round; 
+                -o-border-image: url(../images/border-image.png) 30 round round;
+                border-image: url(../images/border-image.png) 30 round round;
+            }
+
+            > * {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+
+    &-header {
+        padding: 10px 20px;
+    }
+
+    &-title {
+        margin: 0 0 7px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &-subtitle {
+        margin: 0 0 4px;
+        color: #808080;
+    }
+
+    .card-alert {
+        margin: 0 8px;
+        @include linearGradient(#ffffff, #effaff);
+    }
+
+    &-alert {
+        padding: 6px 10px 8px;
+        border: 1px solid #cce5f4;
+        border-radius: 3px;
+        line-height: 1.1;
+
+        &-title {
+            margin: 0 0 7px;
+            color: #262626;
+            font-size: 12px;
+            font-weight: $bold;
+        }
+
+        &-controls {
+            display: flex;
+            align-items: center;
+
+            .card-alert-col {
+                padding: 0 4px;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}

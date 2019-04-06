@@ -1,0 +1,37 @@
+
+
+.progress-bar {
+    position: relative;
+    margin-bottom: 13px;
+    height: 15px;
+    border: 1px solid transparent;
+    overflow: hidden;
+
+    .progress-bar-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        overflow: hidden;
+        width: 0px;
+        transition: 0.25s ease-in-out;
+        will-change: width;
+    }
+
+    &_primary {
+        $theme-color: #9ecbe8;
+        border-color: $theme-color;
+        color: #1e4b69;
+        background: transparent;
+
+        .progress-bar-line {
+            background: $theme-color;
+        }
+    }
+}
